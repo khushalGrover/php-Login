@@ -1,10 +1,8 @@
 <?php
-$host = "localhost";
-$user = 'root';
-$db_name = 'text_db';
-$password = '';
+$config = require 'config.php';
 
-$conn = new mysqli($host, $user, $password, $db_name);
+$conn = new mysqli($config['host'], $config['user'], $config['password'], $config['db_name']);
+
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }

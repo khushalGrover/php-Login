@@ -1,11 +1,7 @@
 <?php
-$host = "localhost";
-$user = 'root';
-$db_name = 'text_db';
-$password = '';
+$config = require 'config.php';
 
-//creat connection
-$conn = new mysqli($host, $user, $password, $db_name);
+$conn = new mysqli($config['host'], $config['user'], $config['password'], $config['db_name']);
 
 // check DB connection 
 if( $conn->connect_error) {
